@@ -1,8 +1,11 @@
 jQuery(document).ready(function($){
 	//cache some jQuery objects
-	var modalTrigger = $('.cd-modal-trigger'),
+	var firstTrigger = $('#1st-trigger'),
+		secondTrigger = $('#2nd-trigger'),
 		transitionLayer = $('.cd-transition-layer'),
 		transitionBackground = transitionLayer.children(),
+		firstLetter = $('#1st-letter'),
+		secondLetter = $('#2nd-letter')
 		modalWindow = $('.cd-modal');
 
 	var frameProportion = 1.78, //png frame aspect ratio
@@ -19,12 +22,20 @@ jQuery(document).ready(function($){
 	});
 
 	//open modal window
-	modalTrigger.on('click', function(event){	
+	firstTrigger.on('click', function(event){	
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
 		setTimeout(function(){
-			modalWindow.addClass('visible');
+			firstLetter.addClass('visible');
+		}, delay);
+	});
+	secondTrigger.on('click', function(event){	
+		event.preventDefault();
+		transitionLayer.addClass('visible opening');
+		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+		setTimeout(function(){
+			secondLetter.addClass('visible');
 		}, delay);
 	});
 
