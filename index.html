@@ -1,69 +1,121 @@
-<!doctype html>
+---
+permalink: /
+---
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="img/favicon.ico" />
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<title>一封信</title>
-</head>
-<body>
-<main class="cd-main-content">
-	<div class="center">
-		<h1>一封信</h1>
-		<a href="#0" class="cd-btn cd-modal-trigger" id="1st-trigger">GU Y.F.启</a>
-	</div>
-	<div class="center">
-		<h1>第二封信</h1>
-		<a href="#0" class="cd-btn cd-modal-trigger" id="2nd-trigger">GU Y.F.启</a>
-	</div>
-</main> <!-- .cd-main-content -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ site.description }}">
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+        {% if site.favicon_img %}
+        <link rel="shortcut icon" href="{{ site.favicon_img_path }}" />
+        {% endif %}
+        <link rel="stylesheet" href="{{ "css/front.css" | prepend: site.baseurl }}">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="content">
+            {% if site.front_img %}
+            <img src="{{ site.front_img_path }}" id="fullscreen">
+            {% endif %}
 
+            {% if site.avatar %}
+                <img src="{{ site.avatar_img_path }}" id="avatar">
+            {% endif %}
 
-<div class="cd-modal" id="1st-letter">
-	<div class="modal-content">
-		<h1>一封信</h1>
-		<p>
-		嗨，你好，亲爱的你，你好。
-		</p>
-		<p>
-		原谅我不知该怎么称呼你。傻傻的我曾一直喜欢用“大姐”，想来拉近一点关系。
-		</p>
-		<p>
-		近日，刚过完考试周的你，一定疲累了许多。有时，我也在想，是不是该主动一点，提出要陪在你身边，却总是担心被拒绝。过了这些年，我以为自己面对感情能更勇敢一点，却发现还是那样怯懦。我为自己想了完美的借口——你有人陪。然而我并不甘心。有时路过你们二人，感受到了你们的情绪差异。我自大的以为你过得并没那么幸福，总是无来由的打扰你。然而就算这感觉是真的，我又能做什么呢？我能让你更幸福吗？我这样问自己。回首三年前，为了逃避自己内心审判的煎熬，选择一个人过的也是我。我太自私了。
-		</p>
-		<p>
-		这些年，和你见面的时间，加起来不超过一个月。以前，我时常在想，我喜欢你的什么。然而，我发现我很难用世人的眼光来评价。那些名词里蕴含的价值我感受不到，虽然我后来也慢慢熟悉这些概念。在过去的一年多时间里，我也尝试过接触其他的人，却总是感觉不如意，草草收场。我发现那些人不及你的善良，虽然也能维持表面的和善。善良的又不及你的独立。然而此外又似乎能感受到一丝忧郁的气息……后来我发现这个命题写得不对，我并不是喜欢这个“什么”，而是全部。我想拥有你的美好，也想体味分担你的低沉。
-		</p>
-		<p>
-		这些天来，我也一直闷在寝室里。虽然两个月前跑出去过一趟，每次晚上躺在青旅的床上，空洞感徐徐而来。楼下酒吧歌手的声音还能隐约的传到耳朵里，我走了下去，然而也只是要了一杯啤酒，然后沉没在卡座里。以前是缺乏自信而很少参加聚会。近来，见了周围人对我态度的前后变化后，又渐渐不愿与人多接触。
-		</p>
-		<p>
-		无事时，我常会想起三年多前，牵你的手在光彪楼里转圈，你穿着白色的连衣裙；和你在网上聊天到深夜四点……然而，我也只有这些过去的记忆可以消费。幻想总是充斥在头脑里，实际做得太少，我发现自己这一个问题。往下探究，又是顾虑太多，勇气欠缺的缘故。我想活得更洒脱一点，却发现追求它的这一份执着又常牵绊着我。
-		</p>
-		<p>
-		终于，我还是鼓气勇气写下这些。我喜欢你。
-		</p>
-	</div> <!-- .modal-content -->
-	<a href="#0" class="modal-close">Close</a>
-</div> <!-- .cd-modal -->
-<div class="cd-modal" id="2nd-letter">
-	<div class="modal-content">
-		<h1>第二封信</h1>
-		<p>
-		测试
-		</p>
-	</div>
-	<a href="#0" class="modal-close">Close</a>
-</div>
+            <h1>{{ site.name }}</h1>
+            <h3>{{ site.description }}</h3>
 
-<div class="cd-transition-layer"> 
-	<div class="bg-layer"></div>
-</div> <!-- .cd-transition-layer -->
+                <ul>
+                    {% if site.github_username %}
+                    <li><a class="fa fa-2x fa-github" href="https://github.com/{{ site.github_username }}"><span class="description">GitHub</span></a></li>
+                    {% endif %}
 
-<script src="js/jquery-2.1.4.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-</body>
+                    {% if site.codepen_username %}
+                    <li><a class="fa fa-2x fa-codepen" href="https://codepen.io/{{ site.codepen_username }}"><span class="description">CodePen</span></a></li>
+                    {% endif %}
+
+                    {% if site.facebook_username %}
+                    <li><a class="fa fa-2x fa-facebook" href="https://facebook.com/{{ site.facebook_username }}"><span class="description">Facebook</span></a></li>
+                    {% endif %}
+
+                    {% if site.vk_username %}
+                    <li><a class="fa fa-2x fa-vk" href="https://vk.com/{{ site.vk_username }}"><span class="description">ВКонтакте</span></a></li>
+                    {% endif %}
+
+                    {% if site.twitter_username %}
+                    <li><a class="fa fa-2x fa-twitter" href="https://twitter.com/{{ site.twitter_username }}"><span class="description">Twitter</span></a></li>
+                    {% endif %}
+
+                    {% if site.google_plus_username %}
+                    <li><a class="fa fa-2x fa-google-plus" href="https://plus.google.com/+{{ site.google_plus_username }}"><span class="description">Google +</span></a></li>
+                    {% endif %}
+
+                    {% if site.linkedin_username %}
+                    <li><a class="fa fa-2x fa-linkedin" href="https://linkedin.com/in/{{ site.linkedin_username }}"><span class="description">LinkedIn</span></a></li>
+                    {% endif %}
+
+                    {% if site.vine_username %}
+                    <li><a class="fa fa-2x fa-vine" href="https://vine.co/{{ site.vine_username }}"><span class="description">Vine</span></a></li>
+                    {% endif %}
+
+                    {% if site.instagram_username %}
+                    <li><a class="fa fa-2x fa-instagram" href="https://instagram.com/{{ site.instagram_username }}"><span class="description">Instagram</span></a></li>
+                    {% endif %}
+
+                    {% if site.flickr_usernmae %}
+                    <li><a class="fa fa-2x fa-flickr" href="https://flickr.com/photos/{{ site.flickr_username }}"><span class="description">Flickr</span></a></li>
+                    {% endif %}
+
+                    {% if site.steam_username %}
+                    <li><a class="fa fa-2x fa-steam" href="http://steamcommunity.com/id/{{ site.steam_username }}"><span class="description">Steam</span></a></li>
+                    {% endif %}
+
+                    {% if site.soundcloud_username %}
+                    <li><a class="fa fa-2x fa-soundcloud" href="https://soundcloud.com/{{ site.soundcloud_username }}"><span class="description">Soundcloud</span></a></li>
+                    {% endif %}
+
+                    {% if site.lastfm_username %}
+                    <li><a class="fa fa-2x fa-lastfm" href="http://www.last.fm/user/{{ site.lastfm_username }}"><span class="description">Last.fm</span></a></li>
+                    {% endif %}
+
+                    {% if site.stack_of_username %}
+                    <li><a class="fa fa-2x fa-stack-overflow" href="https://stackoverflow.com/users/{{ site.stack_of_username }}"><span class="description">Stack OF</span></a></li>
+                    {% endif %}
+
+                    {% if site.reddit_username %}
+                    <li><a class="fa fa-2x fa-reddit" href="https://reddit.com/user/{{ site.reddit_username }}"><span class="description">Reddit</span></a></li>
+                    {% endif %}
+
+                    {% if site.medium_username %}
+                    <li><a class="fa fa-2x fa-medium" href="https://medium.com/@{{ site.medium_username }}"><span class="description">Medium</span></a></li>
+                    {% endif %}
+
+                    {% if site.tumblr_username %}
+                    <li><a class="fa fa-2x fa-tumblr" href="https://{{ site.tumblr_username }}.tumblr.com/"><span class="description">Tumblr</span></a></li>
+                    {% endif %}
+
+                    {% if site.weibo_username %}
+                    <li><a class="fa fa-2x fa-weibo" href="https://weibo.com/{{ site.weibo_username }}"><span class="description">微博</span></a></li>
+                    {% endif %}
+
+                    {% if site.blog_url %}
+                    <li><a class="fa fa-2x fa-tags" href="{{ site.baseurl }}{{ site.blog_url }}"><span class="description">Blog</span></a></li>
+                    {% endif %}
+
+                    {% if site.email %}
+                    <li><a class="fa fa-2x fa-envelope" href="mailto:{{ site.email }}"><span class="description">Email</span></a></li>
+                    {% endif %}
+
+                    {% if site.public_key_url %}
+                    <li><a class="fa fa-2x fa-key" href="{{ site.public_key_url }}"><span class="description">PGP Key</span></a></li>
+                    {% endif %}
+                </ul>
+        </div>
+
+    </body>
 </html>
