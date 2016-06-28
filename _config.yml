@@ -39,12 +39,12 @@ avatar_img_path: "http://tp2.sinaimg.cn/1985356021/180/5631804418/1"
 
 
 front_img: yes
-front_img_path: "imgs/background.jpg"
+front_img_path: "css/imgs/background.jpg"
 #front_img_path: "https://external.url/image.jpg"
 
 
 favicon_img: yes
-favicon_img_path: "imgs/favicon.ico"
+favicon_img_path: "css/imgs/favicon.ico"
 #favicon_img_path: "https://external.url/favicon.ico"
 
 
