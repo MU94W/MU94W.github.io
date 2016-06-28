@@ -28,10 +28,6 @@ permalink: /
 						<p>{{ site.description }}</p>
 						<nav>
 							<ul>
-								{% if site.github_username %}
-								<li><a class="icon fa-github" href="https://github.com/{{ site.github_username }}"><span class="label">GitHub</span></a></li>
-								{% endif %}
-
 								{% if site.codepen_username %}
 								<li><a class="icon fa-codepen" href="https://codepen.io/{{ site.codepen_username }}"><span class="label">CodePen</span></a></li>
 								{% endif %}
@@ -100,14 +96,21 @@ permalink: /
 								<li><a class="icon fa-weibo" href="https://weibo.com/{{ site.weibo_username }}"><span class="label">微博</span></a></li>
 								{% endif %}
 
+								{% if site.gallery_url %}
+								<li><a class="icon fa-camera" href="{{ site.baseurl }}{{ site.gallery_url }}"><span class="label">Gallery</span></a></li>
+								
 								{% if site.blog_url %}
-								<li><a class="icon fa-tags" href="{{ site.baseurl }}{{ site.blog_url }}"><span class="label">Blog</span></a></li>
+								<li><a class="icon fa-book" href="{{ site.baseurl }}{{ site.blog_url }}"><span class="label">Blog</span></a></li>
 								{% endif %}
 
 								{% if site.email %}
 								<li><a class="icon fa-envelope" href="mailto:{{ site.email }}"><span class="label">Email</span></a></li>
 								{% endif %}
-
+								
+								{% if site.github_username %}
+								<li><a class="icon fa-github-alt" href="https://github.com/{{ site.github_username }}"><span class="label">GitHub</span></a></li>
+								{% endif %}
+								
 								{% if site.public_key_url %}
 								<li><a class="icon fa-key" href="{{ site.public_key_url }}"><span class="label">PGP Key</span></a></li>
 								{% endif %}
